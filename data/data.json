@@ -1,0 +1,7 @@
+[
+  { "date": "2024-10-25", "amount": 400.46, "title": "food", "key": 1 },
+  { "date": "2024-11-05", "amount": 200.46, "title": "licence", "key": 2 },
+  { "date": "2024-11-04", "amount": 50.63, "title": "clothes", "key": 3 },
+  { "date": "2024-10-28", "amount": 100.16, "title": "school", "key": 4 },
+  { "date": "2025-10-29", "amount": 200.36, "title": "internet", "key": 5 }
+]
