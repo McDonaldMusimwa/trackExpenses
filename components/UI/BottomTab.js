@@ -1,11 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AllExpenses from "../screens/AllExpenses";
-import RecentExpense from "../screens/RecentExpense";
-import colors from "../const/colors";
-import {Ionicons} from '@expo/vector-icons'
+import AllExpenses from "../../screens/AllExpenses";
+import RecentExpense from "../../screens/RecentExpense";
+import colors from "../../const/colors";
+import {Ionicons} from '@expo/vector-icons';
+import IconButton from "./IconButton";
+import { useNavigation } from "@react-navigation/native";
 const Tab = createBottomTabNavigator();
 
 function BottomTab() {
+  const navigation = useNavigation()
   return (
     <Tab.Navigator screenOptions={{
       headerStyle:{
@@ -13,7 +16,10 @@ function BottomTab() {
       },
       headerTintColor:colors.white,
       tabBarStyle:{backgroundColor:colors.bluedark},
-      tabBarActiveTintColor:{backgroundColor:colors.black}
+      tabBarActiveTintColor:{backgroundColor:colors.black},
+      headerRight:({tintColor})=> <IconButton icon="add" color={tintColor} size={24} onPress={()=>{
+        navigation.navigate("ManageExpense")
+      }}/>
 
     }}>
       <Tab.Screen name="AllExpenses" component={AllExpenses} options={{

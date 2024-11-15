@@ -1,9 +1,11 @@
 import {View,Text} from 'react-native';
-import { useState } from 'react';
+import {useContext} from 'react'
+import { ExpensesContext } from '../store/expenses-context';
 import data from '../data/data.json';
 import ExpensesOutPut from '../components/ExpensesOutPut/ExpensesOutPut';
 function RecentExpense(){
-    const filteredinvoices = data.filter(
+  const expensesCtx = useContext(ExpensesContext)
+    const filteredinvoices = expensesCtx.expenses.filter(
         (invoice) => new Date(invoice.date) < new Date()
       );
 
